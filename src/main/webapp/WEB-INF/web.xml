@@ -1,0 +1,94 @@
+<!--<%@ page language="java" pageEncoding="UTF-8" %>-->
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!-- 为当前webapp的servletContext提供必要的配置属性,所有的servlet对象都可以获取到 -->
+  <context-param>
+    <param-name>initAttr1</param-name>
+    <param-value>I am an Init Attribute in this Webapp no change !</param-value>
+  </context-param>
+
+  <!-- Ps: tomcat6 的 servlet-name 必须定义先于 servlet-mapping (tomcat 7 ++ 已解决此bug)-->
+  <!-- 定义 servlet 类-->
+  <servlet>
+    <!-- 给 servlet 类起别名 (建议跟类名一样) -->
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <!-- 定义 servlet 类的路径 >>>>>>>>>> tomcat服务器就可以通过反射获取该类字节码,调用并执行其 servlet 服务 -->
+    <servlet-class>servlet.LifeCycleServlet</servlet-class>
+    <!-- 该 servlet 初始化的需要给予的配置信息 -->
+    <init-param>
+      <param-name>key1</param-name>
+      <param-value>value1</param-value>
+    </init-param>
+    <init-param>
+      <param-name>key2</param-name>
+      <param-value>value2</param-value>
+    </init-param>
+    <!-- 该Servlet 描述信息 -->
+    <description>
+      This is the description of my J2EE component
+    </description>
+    <!-- 该Servlet 展示信息 -->
+    <display-name>
+      This is the display name of my J2EE component
+    </display-name>
+    <!--
+    添加了此标签的servlet类会在tomcat服务器启动的时候就加载到内存中,适用于那些执行init()耗时较长的servlet
+    取值范围 0-6
+    取值越小 权值越大 加载越靠前
+    -->
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <!--
+    定义 servlet 类和浏览器地址的映射
+    Ps:
+    A.一个 servlet 可以映射 多个 url-pattern 路径
+    B.servlet支持 "虚拟路径通配"
+      格式一 :      *.通配符     [例如:   *.do(SpringMvc 和 SpringBoot 使用这种)      *.action(Struts2 使用这种)]
+      格式二 :      /*          [例如:   /* 表示此项目路径下任意路径都通配]
+      格式一和格式二 不能同时存在  [例如:   /*.do   X]
+  -->
+  <servlet-mapping>
+    <!-- servlet类别名 -->
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <!-- 浏览器的访问路径,支持虚拟路径通配 -->
+    <url-pattern>/servlet/life</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern>/servlet/life/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern> *.life</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>RespHttpServlet</servlet-name>
+    <servlet-class>servlet.TestHttpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RespHttpServlet</servlet-name>
+    <url-pattern>/servlet/test</url-pattern>
+  </servlet-mapping>
+
+<!-- jsp 文件配置 -->
+<!--  <jsp-config>-->
+<!--    <jsp-property-group>-->
+<!--      <display-name>JSPConfiguration</display-name>-->
+<!--      <url-pattern>*.jsp</url-pattern>-->
+<!--      <el-ignored>false</el-ignored>-->
+<!--      <page-encoding>utf-8</page-encoding>-->
+<!--      <scripting-invalid>false</scripting-invalid>-->
+<!--      <include-prelude></include-prelude>-->
+<!--      <include-coda></include-coda>-->
+<!--    </jsp-property-group>-->
+<!--  </jsp-config>-->
+
+</web-app>

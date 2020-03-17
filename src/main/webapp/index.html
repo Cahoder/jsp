@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        charset
+        用于告诉浏览器 用什么编码渲染页面
+        用于告诉服务器 用什么方式解码数据
+    -->
+    <meta http-equiv="Content-type" content="text/html;" charset="UTF-8">
+    <title>Hello World</title>
+</head>
+<body>
+<H1>你好世界 !</H1>
+<form action="/webapp1/servlet/test" METHOD="post">
+    <p>name:<input type="text" name="name"></p>
+    <p>pwd:<input type="password" name="pwd"></p>
+    <p>验证码:<input type="text" name="code"><img src="/webapp1/servlet/test"></p>
+    <p><input type="submit" value="提交"></p>
+</form>
+</body>
+</html>
