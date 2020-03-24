@@ -71,9 +71,15 @@ public void _jspService                                                         
                        内部使用PrintWriter,即 (out == response.getWriter()) 结果为 true
                        可以通过page指令的buffer指定缓冲大小
                 --注意: out对象和PrintWriter对象同时使用时候,PrintWriter的数据优先于out输出,<a target="_blank" href="https://blog.csdn.net/zhd_superstar/article/details/6588222">详情点击</a>
+                        out.flush() 方法立即清空缓冲区，并写出数据
+                        out.clear() 方法立即清空缓冲区，但不写出数据，如果缓冲区已被清理过，则抛出 java.io.IOException: 错误：尝试清空已刷新的缓冲区
+                        out.clearBuffer() 方法立即清空缓冲区，但不写出数据，如果缓冲区已被清理过，则不抛出 java.io.IOException
             9.java.lang.Throwable exception = org.apache.jasper.runtime.JspRuntimeLibrary.getThrowable(request);
                 --表示: 捕获JSP页面异常的对象
-                       JSP页面必须指定 < %@ page isErrorPage="true" % > 才会出现此对象
+                        显示错误的JSP页面必须指定 < %@ page isErrorPage="true" % > 才会出现此对象
+                --方法一：使用try{}catch(){} 语法捕获 ---优先级最高
+                  方法二：在当前jsp页面的page指令中配置errorPage="xxx",并在错误页面指定< %@ page isErrorPage="true" % > ---优先级中等
+                  方法三：在web.xml文件中配置<error-page>标签 ---优先级最低
 </pre>
 }
 </body>
