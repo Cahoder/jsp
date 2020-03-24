@@ -42,6 +42,9 @@ public void _jspService                                                         
             2.final javax.servlet.http.HttpServletRequest request
                 --表示: 请求
                 --作用范围: 一次请求(转发)
+                --注意: Object request.getAttribute() 和 String request.getParamter() 获取参数的区别
+                        setAttribute()设置的属性只有当Web组件之间存在 转发关系 时获得到
+                        地址栏和表单中传递的参数只有当Web组件之间存在 链接关系 时获得到
             3.javax.servlet.http.HttpSession session = null;
                 --表示: 会话
                 --作用范围: 一次会话
