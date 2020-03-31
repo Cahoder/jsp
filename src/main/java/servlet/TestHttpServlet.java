@@ -114,7 +114,7 @@ public class TestHttpServlet extends HttpServlet {
     }
 
     private void session(HttpServletRequest req, HttpServletResponse resp) {
-        //会话结束,session 同样会失效
+        //会话结束,sessionq其实没有失效,只是因为客户端发送的jsessionid改变了,即导致重新开辟了session内存
         HttpSession session = req.getSession(); //session 是基于cookie的技术,在服务端开辟一块内存保存,并用JSESSIONID标示
         System.out.println(session);    //tomcat实现session接口的类
         System.out.println(session.getId());    //JSESSIONID
