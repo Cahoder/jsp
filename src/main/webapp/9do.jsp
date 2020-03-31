@@ -51,6 +51,7 @@ public void _jspService                                                         
             4.final javax.servlet.ServletContext application;
                 --表示: 当前web项目上下文
                 --作用范围: 整个项目
+                --注意: application.setAttribute() 设置的参数是整个应用共享的,生命周期最长直至服务器停止
         Ⅱ:其他
             5.final javax.servlet.jsp.PageContext pageContext;
                 --表示: 当前JSP页面的上下文,它相当于页面中所有其他对象功能的集大成者,可以用它访问本页中所有的其他对象
