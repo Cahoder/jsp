@@ -102,5 +102,22 @@
 <!--   <exception-type>java.lang.Exception</exception-type> -->
 <!--   <location>/error.jsp</location> -->
 <!--  </error-page> -->
+ 
+<!-- jsp session配置 -->
+ 	 <!-- <session-config> -->
+   <!-- <session-timeout>30</session-timeout> --> <!-- session生存时间 -->
+   <!-- <cookie-config> --> <!-- session传给浏览器的标识cookie配置信息 -->
+     <!-- <name>JSESSIONID</name> -->
+     <!-- <domain>example.org</domain> -->
+     <!-- <path>/shop</path> -->
+     <!-- <comment>some information</comment> -->
+     <!-- <http-only>true</http-only> -->
+     <!-- <secure>false</secure> -->
+     <!-- <max-age>1800</max-age> -->
+	 	<!-- </cookie-config> -->
+   <!-- <tracking-mode>COOKIE</tracking-mode> --> <!-- 使用的追踪技术 -->
+   <!-- <tracking-mode>URL</tracking-mode> -->
+   <!-- <tracking-mode>SSL</tracking-mode> -->
+	<!-- </session-config> --
 
 </web-app>
