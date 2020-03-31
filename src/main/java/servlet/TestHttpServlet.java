@@ -114,18 +114,22 @@ public class TestHttpServlet extends HttpServlet {
     }
 
     private void session(HttpServletRequest req, HttpServletResponse resp) {
+        //会话结束,session 同样会失效
         HttpSession session = req.getSession(); //session 是基于cookie的技术,在服务端开辟一块内存保存,并用JSESSIONID标示
         System.out.println(session);    //tomcat实现session接口的类
         System.out.println(session.getId());    //JSESSIONID
+        
+        /* session.setMaxInactiveInterval(int interval);     //用户两次访问服务间隔时间超过设置的interval时间,session就会失效
+           session.invalidate()    //直接清除session,使之失效
+        */
 
         System.out.println(session.isNew());    //如果服务器还未创建过SESSION会自动创建一块内存保存,并在响应头通知浏览器保存JSESSIONID
         /* resp.addCookie(new Cookie("JSESSIONID",session.getId())); //这句话首次会自动执行
            类似于 Set-Cookie: JSESSIONID=FBEDF67F7902F820CD856A6100D82BBC; Path=/webapp1/; HttpOnly
         */
 
-        /*
-        如果浏览器禁用了cookie,session内存块就会被不停创建
-        可以要使用URL重写 -> http://localhost:8080/webapp1/servlet/test;jsessionid=xxx (xxx必须是已存在的JSESSIONID)
+        /* 如果浏览器禁用了cookie,session内存块就会被不停创建
+           可以要使用URL重写 -> http://localhost:8080/webapp1/servlet/test;jsessionid=xxx (xxx必须是已存在的JSESSIONID)
         */
         String url = resp.encodeURL("test");
         System.out.println(url); //判断浏览器是否禁用了cookie,禁用会在地址后自动加上';jsessionid=xxx' (地址写错不加上 ';jsessionid=xxx')
