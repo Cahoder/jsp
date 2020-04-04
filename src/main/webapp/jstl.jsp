@@ -50,7 +50,7 @@
                             expression2
                         <</span>/c:when>
                         ...
-                        <<span>c:otherwise test="Boolean|\${支持EL}">
+                        <<span>c:otherwise>
                             default expression
                         <</span>/c:otherwise>
                        <</span>/c:choose>
