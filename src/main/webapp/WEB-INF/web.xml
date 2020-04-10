@@ -118,6 +118,6 @@
    <!-- <tracking-mode>COOKIE</tracking-mode> --> <!-- 使用的追踪技术 -->
    <!-- <tracking-mode>URL</tracking-mode> -->
    <!-- <tracking-mode>SSL</tracking-mode> -->
-	<!-- </session-config> --
+	<!-- </session-config> -->
 
 </web-app>

@@ -57,6 +57,18 @@
       <version>1.1.2</version>
       <scope>compile</scope>
     </dependency>
+    <!-- apache database connection pool -->
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <!-- mysql java database connection -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.18</version>
+    </dependency>
   </dependencies>
 
   <!-- 构建该项目时候配置信息,所需插件等等-->

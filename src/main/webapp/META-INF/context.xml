@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Use Tomcat WEB Server implement's Database Connection Pool -->
+<Context>
+	<Resource
+	    name="jdbc/mysql"
+	    auth="Container"
+		type="javax.sql.DataSource"
+		username="root"
+		password="123456"
+		maxIdle="30"
+		maxWait="10000"
+		maxActive="100"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/mini_program"
+		logAbandoned="true"
+	/>
+	<!-- 
+		name 设置数据源JNDI名 (Java Naming and Directory Interface)
+		type 设置数据源的类型
+		auth 设置数据源的管理者，可选值（Container-由容器来创建和管理数据源|Application-由WEB应用程序来创建和管理数据源）
+		driverClassName 连接数据库的JDBC驱动实现类
+		maxActive 连接池中最多可以保持maxActive个活跃链接，0表示无限制
+		maxIdle 连接池中最多可空闲maxIdle个连接，0表示无限制
+		minIdle 连接池中最少空闲maxIdle个连接
+		initialSize 初始化连接数目
+		maxWait 连接池中连接用完时,与数据库建立新连接最长等待时间，超出此时间抛出异常，-1表示无限等待（毫秒）
+		username 数据库用户名
+		password 数据库密码
+		url 数据库连接路径
+		logAbandoned 在回收连接的时候，在日志输出回收连接信息
+	-->
+</Context>
