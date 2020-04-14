@@ -52,7 +52,7 @@
         </jsp:include>
     3.<jsp:useBean id="bean对象id,指定范围需唯一" class="bean对象所属类路径" scope="page(默认)|request|session|application" >  创建JavaBean
       <jsp:setProperty property="成员属性|*" name="bean对象id" value="需与成员属性数据类型匹配" >  设置指定JavaBean的指定属性
-      <jsp:getProperty property="成员属性|*" name="bean对象id" >  获取指定JavaBean的指定属性
+      <jsp:getProperty property="成员属性" name="bean对象id" >  获取指定JavaBean的指定属性
 
 《《《《《JSP For循环标签-性能差》》》》》
     <%for (String word : words) {%>
