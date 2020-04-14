@@ -50,7 +50,7 @@
             <jsp:param value="参数值" name="参数名"></jsp:param>
             ...
         </jsp:include>
-    3.<jsp:useBean id="bean对象id,指定范围需唯一" class="bean对象所属类路径" scope="page(默认)|request|session|application" >  创建JavaBean
+    3.<jsp:useBean id="bean对象id,指定范围需唯一" class="bean对象所属类路径" scope="page(默认)|request|session|application" >  定位|创建JavaBean
       <jsp:setProperty property="成员属性|*" name="bean对象id" value="需与成员属性数据类型匹配|*时需要省略" >  设置指定JavaBean的指定属性
       <jsp:getProperty property="成员属性" name="bean对象id" >  获取指定JavaBean的指定属性
 
