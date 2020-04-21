@@ -12,13 +12,14 @@
 
 <body>
     <%--
-     EL表达式:expression language 即支持JSP脚本元素中的表达式 <%= %>
+     EL表达式:expression language 即支持JSP2.0版本脚本元素中的表达式 <%= %>
      只能读取作用域中的数据不能写入数据，不支持控制语句，不能读取Jsp页面中定义的<% 局部变量; %>
      ${el } --- 表达式|算术运算符|关系运算符
      \${el } --- 原样输出
      ${MapsObj['key'] } --- 获取Map容器中的某个键对应的值
      ${Arrays[index] } --- 获取Array数组中的某下标对应的值
      ${Object.attribute|key } --- 获取某个对象中的属性或键值
+     注: "[]"运算符 和 "."运算符 --- 在动态取值的时候有差异，只有"[]"运算符支持动态取值
      ${Scope.attribute } --- 从指定的域中查找属性Scope:"pageScope(默认)|requestScope|sessionScope|applicationScope"
      注:找得到返回,找不到返回空字符串
     --%>
@@ -52,6 +53,9 @@
        \${(true and true) && true } : ${(true and true) && true }
        \${(true or false) || false } : ${(true or false) || false }
        \${!true or (not false) } : ${!true or (not false) }
+       \${10 mod 3 == 10 % 3 } : ${10 mod 3 == 10 % 3 }
+       \${10 div 2 == 10 / 2 } : ${10 div 2 == 10 / 2 }
+       \${empty(var) } : ${empty(var) }
        </b>
     </pre>
 </body>
