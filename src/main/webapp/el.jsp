@@ -55,7 +55,7 @@
        \${!true or (not false) } : ${!true or (not false) }
        \${10 mod 3 == 10 % 3 } : ${10 mod 3 == 10 % 3 }
        \${10 div 2 == 10 / 2 } : ${10 div 2 == 10 / 2 }
-       \${empty(var) } : ${empty(var) }
+       \${empty var } : ${empty var }
        </b>
     </pre>
 </body>
