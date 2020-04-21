@@ -21,11 +21,11 @@
             jstl + el 替代了传统在 jsp 页面中嵌入 java 程序的做法,提高程序的可读性和维护性
             jar包下载 https://tomcat.apache.org/download-taglibs.cgi
         标签库分类:
-            核心core
-            国际化i18n
-            数据库sql
-            xml
-            jstl 函数标签
+            核心core --- < %@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+            国际化i18n --- < %@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+            数据库sql --- < %@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+            xml --- < %@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="xml"%>
+            函数标签 --- < %@ taglib uri="http://java.sun.com/jsp/jstl/fn" prefix="fn"%>
         使用步骤:
             1.导入jar包
             2.jsp文件中taglib标签声明使用 < %@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
